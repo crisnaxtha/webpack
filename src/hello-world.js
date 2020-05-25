@@ -1,5 +1,9 @@
 import HelloWorldButton from './component/hello-world-button/HelloWorldButton'
-import addImage from './add-image';
+import Heading from './component/heading/heading.js';
+import _ from 'lodash';
+
+const heading = new Heading();
+heading.render(_.upperCase("hello World"));
 
 const helloWorldButton = new HelloWorldButton;
 helloWorldButton.render();

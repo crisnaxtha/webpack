@@ -14,6 +14,11 @@ module.exports = {
         publicPath: ''
     },
     mode: 'production',
+    optimization: {
+        splitChunks: {
+            chunks: "all"
+        }
+    },
     module: {
         rules: [
             {
@@ -22,18 +27,6 @@ module.exports = {
                     'file-loader'
                 ]
             },
-            // {
-            //     test: /\.css$/,
-            //     use: [
-            //         'style-loader', 'css-loader'
-            //     ]
-            // },
-            // {
-            //     test: /\.scss$/,
-            //     use: [
-            //         'style-loader', 'css-loader', 'sass-loader'
-            //     ]
-            // },
             {
                 test: /\.css$/,
                 use: [
@@ -71,14 +64,14 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             filename: 'hello-world.html',
-            chunks: ['hello-world'],
+            chunks: ['hello-world', 'vendor~hello~world~kiwi'],
             title: "Hello World",
             description: 'Hello World',
             template: 'src/page-template.hbs'
         }),
         new HtmlWebpackPlugin({
             filename: 'kiwi.html',
-            chunks: ['kiwi'],
+            chunks: ['kiwi', 'vendor~hello~world~kiwi'],
             title: "Kiwi",
             description: 'Kiwi',
             template: 'src/page-template.hbs'
