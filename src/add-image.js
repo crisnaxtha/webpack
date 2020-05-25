@@ -1,4 +1,4 @@
-import Kiwi from './Kiwi.jpg';
+import Kiwi from './component/kiwi-image/Kiwi.jpg';
 
 function addImage() {
     const img = document.createElement('img');
